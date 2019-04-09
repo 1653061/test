@@ -1,6 +1,6 @@
 let express = require('express');
 let app = express();
-let models = require('sequelize');
+let models = require('./models');
 
 
 // set handlebars view engine
