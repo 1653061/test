@@ -1,18 +1,25 @@
 {
   "development": {
-    "url": "postgres://iuovkusxipizum:6fc3542b497a53248862ea01376028e25e6e629bb04941afe4eea7c1985f5806@ec2-54-243-241-62.compute-1.amazonaws.com:5432/dfqreoc9e3kn3b?ssl=true",
-    "dialect": "postgresql"
-  
+    "username": "postgres",
+    "password": "postgres",
+    "database": "database_tivi",
+    "dialect": "postgresql",
+    "port": "5432"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "iuovkusxipizum",
+    "password": "6fc3542b497a53248862ea01376028e25e6e629bb04941afe4eea7c1985f5806",
+    "database": "dfqreoc9e3kn3b",
+    "dialect": "postgresql",
+    "port": "5432",
+    "SSL": true
   },
   "production": {
-    "url": "postgres://iuovkusxipizum:6fc3542b497a53248862ea01376028e25e6e629bb04941afe4eea7c1985f5806@ec2-54-243-241-62.compute-1.amazonaws.com:5432/dfqreoc9e3kn3b?ssl=true",
-    "dialect": "postgresql"
+    "username": "iuovkusxipizum",
+    "password": "6fc3542b497a53248862ea01376028e25e6e629bb04941afe4eea7c1985f5806",
+    "database": "dfqreoc9e3kn3b",
+    "dialect": "postgresql",
+    "port": "5432",
+    "SSL": true
   }
 }

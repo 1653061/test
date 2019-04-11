@@ -1,0 +1,211 @@
+<style>
+    .info {
+        font-size: 25px;
+    }
+
+    .form-control-x {
+        padding-left: 10px;
+        font-size: 20px;
+        width: 100%;
+    }
+
+    #main-img {
+        display: block;
+        width: 600px;
+        height: 400px;
+        margin: 0 auto;
+        padding-top: 40px;
+    }
+
+    #main-info {
+        padding: 15px;
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+
+    .title-info {
+        color: black;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .title-link {
+        text-decoration: none !important;
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+    }
+
+    .title-time {
+        color: black;
+        text-align: left;
+        padding: 0px;
+        font-size: 13px;
+    }
+
+    .answ-info {
+        text-align: center;
+        margin: auto;
+        color: black;
+    }
+
+    .user-info {
+        text-align: center;
+        margin: auto;
+        color: black;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="breadcrumb">
+                <li class="."><a class="text-color" href="../index.html">Trang chủ</a></li>
+                <li class="breadcb"><a class="text-color" href="../contact/ThaoLuan.html">Thảo luận</a></li>
+                <li class="breadcb active"><a class="text-color" href="../contact/ThaoLuanChiTiet.html">Thảo luận chi
+                        tiết</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-4">
+            <p style="color: #0063B9; font-weight: bold; font-size: 30px; padding-top: 100px;">{{discusses.content}}
+            </p>
+        </div>
+        <div class="col-md-8" style="padding-top: 100px; margin: auto">
+
+            {{{ paginate ./pagination leftText="Prev" rightText="Next" limit="5"}}}
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container-fluid py-4">
+    <div class="container">
+        <div style="padding-top: 10px;">
+            <div class="row" style="background: #0063B9; margin: auto; font-size: 0px">
+                <div class="col-md-11 col-10" style="margin: auto">
+                    <ul class="navbar-nav mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <p class="nav-link" style="font-size: 10px; color: white; text-align: left; margin: auto">
+                                {{moment discusses.time format="YYYY-MM-DD HH:MM"}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-1 col-2" style="margin: auto">
+                    <ul class="navbar-nav mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <p class="nav-link" style="font-size: 10px; color: white; text-align: center; margin: auto">
+                                #0</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row" style="background: #F1F0EE; margin: auto; font-size: 0px;">
+                <div class="col-md-2 col-12" style="margin: auto; border-right: solid 1px #898989;">
+                    <ul class="navbar-nav mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <img src="../images/av_default.png" alt="avatar"
+                                style="margin: auto; display: block; border-radius: 50%; width: 100px; height: 100px;"></img>
+                            <a class="nav-link"
+                                style="font-size: 20px; color: black; text-align: center; margin: auto">{{discusses.username}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-10 col-12">
+                    <ul class="navbar-nav mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <p class="nav-link" style="height: auto; font-size: 15px; color: black; text-align: left;">
+                                {{discusses.detail}}
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {{#each discusses_answer}}
+        <div style="padding-top: 10px;">
+            <div class="row" style="background: #0063B9; margin: auto; font-size: 0px">
+                <div class="col-md-11 col-10" style="margin: auto">
+                    <ul class="navbar-nav mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <p class="nav-link" style="font-size: 10px; color: white; text-align: left; margin: auto">
+                                {{moment time format="YYYY-MM-DD HH:MM"}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-1 col-2" style="margin: auto">
+                    <ul class="navbar-nav mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <p class="nav-link" style="font-size: 10px; color: white; text-align: center; margin: auto">
+                                #{{@index}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row" style="background: #F1F0EE; margin: auto; font-size: 0px;">
+                <div class="col-md-2 col-12" style="margin: auto; border-right: solid 1px #898989;">
+                    <ul class="navbar-nav mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <img src="../images/av_default.png" alt="avatar"
+                                style="margin: auto; display: block; border-radius: 50%; width: 100px; height: 100px;"></img>
+                            <a class="nav-link"
+                                style="font-size: 20px; color: black; text-align: center; margin: auto">{{username}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-10 col-12">
+                    <ul class="navbar-nav mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <p class="nav-link" style="height: auto; font-size: 15px; color: black; text-align: left;">
+                                {{content}}
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+
+    </div>
+</div>
+
+<div class="container" style="padding-bottom: 50px">
+
+    {{{ paginate ./pagination leftText="Prev" rightText="Next" limit="5"}}}
+</div>
+
+<div class="container" style="padding-bottom: 50px">
+
+    <form action="#" >
+        <div class="pic-form" style="padding: 10px; height: auto">
+            <div style="padding: 10px" class="row">
+                <div class="col-md-9 col-6">
+                    <textarea class="form-control-x" name="Text1" cols="" rows="6" placeholder="Bình luận"></textarea>
+
+                </div>
+                <div class="col-md-3 col-6" style="padding-right: 10px; padding-top: 100px">
+                    <input id="files" style="visibility:hidden;;" type="file">
+                    <label for="files" style="background-color: #D8447B; color: white; float: right; margin: auto;"
+                        class="btn">Thêm
+                        hình ảnh</label>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="padding-top: 20px;">
+            <button type="submit"
+                style="display: block; margin: auto; background-color: #D8447B; color: white; font-size: 30px; width: 200px">Submit</button>
+        </div>
+    </form>
+</div>

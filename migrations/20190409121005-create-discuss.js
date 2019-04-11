@@ -9,7 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userid: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+      },
+      username: {
+        type: Sequelize.STRING
       },
       time: {
         type: Sequelize.DATE
@@ -20,8 +23,14 @@ module.exports = {
       content: {
         type: Sequelize.STRING
       },
+      detail: {
+        type: Sequelize.STRING
+      },
       status: {
         type: Sequelize.BOOLEAN
+      },
+      numberAnswer: {
+          type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

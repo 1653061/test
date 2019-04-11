@@ -1,0 +1,150 @@
+<style>
+    .title-info {
+        color: black;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .title-link {
+        text-decoration: none !important;
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+    }
+
+    .title-time {
+        color: black;
+        text-align: left;
+        padding: 0px;
+        font-size: 13px;
+    }
+
+    .answ-info {
+        text-align: center;
+        margin: auto;
+        color: black;
+    }
+
+    .title-info:hover {
+        color: rgb(223, 35, 97);
+    }
+
+    .user-info {
+        text-decoration: none !important;
+        text-align: center;
+        color: #0063B9
+    }
+
+    .user-info:hover {
+        color: rgb(223, 35, 97);
+    }
+
+    .user-info-li {
+        margin: auto;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="breadcrumb">
+                <li><a class="text-color" href="../index.html">Trang chủ</a></li>
+                <li class="breadcb active"><a class="text-color" href="../contact/ThaoLuan.html">Thảo luận</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-4">
+            <p style="color: #0063B9; font-weight: bold; font-size: 30px; padding-top: 100px;">THẢO LUẬN</p>
+        </div>
+        <div class="col-md-8" style="padding-top: 100px; margin: auto">
+
+            {{{ paginate ./pagination leftText="Prev" rightText="Next" limit="5"}}}
+        </div>
+    </div>
+
+
+</div>
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="row" style="background: #0063B9; margin: auto;">
+            <div class="col-md-5 col-5" style="margin: auto">
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <p class="nav-link" style="color: white; text-align: center; margin: auto">TIÊU ĐỀ</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-2" style="margin: auto">
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <p class="nav-link" style="text-align: center; margin: auto; color: white">TRẢ LỜI</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-5 col-5" style="margin: auto">
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <p class="nav-link" style="text-align: center; margin: auto; color: white">NGƯỜI VIẾT</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="container">
+        {{#each discusses}}
+        <div class="row" style="margin: auto; background: white; border-bottom: solid 2px;">
+            <div class="col-md-5 col-5" style="margin: auto;">
+                <ul class="navbar-nav">
+                    <div class="row">
+                        <div class="col-12 col-md-2">
+                            <i class="fa fa-envelope-o" style="font-size: 40px; margin: auto; color: black;"></i>
+                        </div>
+
+                        <div class="col-12 col-md-10">
+                            <a class="title-info title-link" href="/discuss/{{id}}">{{content}}</a>
+                            <p class="title-time">{{moment time format="YYYY-MM-DD HH:MM"}}</p>
+                        </div>
+                    </div>
+
+                </ul>
+            </div>
+            <div class="col-md-2 col-2" style="margin: auto;">
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <p class="answ-info">{{numberAnswer}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-5 col-5" style="margin: auto">
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <li class="nav-item user-info-li">
+                        <a href="../user/ThongTinUser.html" class="user-info">{{username}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="col-md-1">
+        <label for="butn" style="background-color: #0063B9; color: white; float: left" class="btn">Thêm đề tài
+            +</label>
+        <input id="butn" style="visibility:hidden;" type="button">
+    </div>
+
+</div>
+<div class="container" style="padding-bottom: 50px">
+
+    {{{ paginate ./pagination leftText="Prev" rightText="Next" limit="5"}}}
+</div>
